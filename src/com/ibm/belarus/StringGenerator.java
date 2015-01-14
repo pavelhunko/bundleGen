@@ -19,4 +19,6 @@ public class StringGenerator {
 				+ "\";\nvalues:\n   ibm_disable_default_option_group_max=\"TRUE\";\n   Category=\"Services\";\n}\n";
 		return pcmSString;
 	}
+	
+	//public static String cmlGen()
 }

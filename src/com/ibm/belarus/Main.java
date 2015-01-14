@@ -1,17 +1,18 @@
 package com.ibm.belarus;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
-	public String srcContents;
-	public static String cvtContents, cvtRes;
-	public static String pcmContents, pcmRes;
-	public String cmlContents;
-	static String[] bundleNumArray = new String[2048]; // ????
-	static String[] mtmNumArray = new String[2048]; // ????
-	static String[] allNumArray = new String[2048];
-
+	//public String srcContents;
+	//public static String cvtContents, cvtRes;
+	//public static String pcmContents, pcmRes;
+	//public String cmlContents;
+	//static String[] bundleNumArray = new String[2048]; // ????
+	public static ArrayList<String> mtmNumArrayList = new ArrayList<>();
+	public static ArrayList<String> ptnNumArrayList = new ArrayList<>();
+	
 	public String resContents;
 
 	public static void main(String[] args) {
@@ -22,8 +23,8 @@ public class Main {
 		while (m.find()) {
 
 			if (i % 2 == 0) {
-
-				if (cvtRes == null)
+				mtmNumArrayList.add(m.group());
+			/*	if (cvtRes == null)
 					cvtRes = StringGenerator.cvtGen(m.group());
 				else
 					cvtRes += StringGenerator.cvtGen(m.group());
@@ -35,14 +36,15 @@ public class Main {
 				if (pcmRes == null)
 					pcmRes = StringGenerator.pcmGenSecondPart(m.group());
 				else
-					pcmRes += StringGenerator.pcmGenSecondPart(m.group());
+					pcmRes += StringGenerator.pcmGenSecondPart(m.group());*/
 			}
+			else ptnNumArrayList.add(m.group());
 			;
 
-			allNumArray[i] = m.group();
+			//allNumArray[i] = m.group();
 			i++;
 		}
-		System.out.println(pcmRes + "\n" + cvtRes);
+		System.out.println(ptnNumArrayList);
 
 	}
 
